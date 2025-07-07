@@ -1,0 +1,77 @@
+[
+  {
+    "Id": 1,
+    "Titulo": "Desenvolvedor .NET Pleno",
+    "Descricao": "Procuramos um desenvolvedor .NET com experiência em ASP.NET Core e Entity Framework para atuar em projetos de e-commerce."
+  },
+  {
+    "Id": 2,
+    "Titulo": "Engenheiro de Software Sênior (Backend)",
+    "Descricao": "Vaga para engenheiro de software sênior com foco em arquitetura de microsserviços, C# e mensageria (RabbitMQ/Kafka)."
+  },
+  {
+    "Id": 3,
+    "Titulo": "Desenvolvedor Frontend Júnior (React)",
+    "Descricao": "Oportunidade para desenvolvedor júnior com conhecimento em React, TypeScript e consumo de APIs REST."
+  },
+  {
+    "Id": 4,
+    "Titulo": "Analista de QA Pleno",
+    "Descricao": "Responsável pela criação e execução de planos de teste, automação de testes com Selenium/C# e reporte de bugs."
+  },
+  {
+    "Id": 5,
+    "Titulo": "Arquiteto de Soluções Cloud (Azure)",
+    "Descricao": "Especialista em desenhar e implementar soluções escaláveis na nuvem da Microsoft Azure, utilizando seus principais serviços."
+  },
+  {
+    "Id": 6,
+    "Titulo": "Desenvolvedor Fullstack Pleno (Angular + .NET)",
+    "Descricao": "Profissional para atuar tanto no frontend com Angular quanto no backend com .NET Core em projetos de grande porte."
+  },
+  {
+    "Id": 7,
+    "Titulo": "DBA SQL Server Sênior",
+    "Descricao": "Administrador de banco de dados com vasta experiência em otimização de queries, manutenção e segurança de SQL Server."
+  },
+  {
+    "Id": 8,
+    "Titulo": "Gerente de Projetos de TI",
+    "Descricao": "Liderar equipes de desenvolvimento utilizando metodologias ágeis (Scrum/Kanban) e garantir a entrega dos projetos."
+  },
+  {
+    "Id": 9,
+    "Titulo": "Analista de Segurança da Informação",
+    "Descricao": "Atuar na identificação de vulnerabilidades, implementação de políticas de segurança e resposta a incidentes."
+  },
+  {
+    "Id": 10,
+    "Titulo": "Desenvolvedor Python Pleno (Data Science)",
+    "Descricao": "Vaga para trabalhar com análise de dados, criação de modelos de machine learning e pipelines de dados com Python."
+  },
+  {
+    "Id": 11,
+    "Titulo": "Designer UX/UI Sênior",
+    "Descricao": "Criar interfaces intuitivas e experiências de usuário incríveis para nossas aplicações web e mobile."
+  },
+  {
+    "Id": 12,
+    "Titulo": "Engenheiro DevOps Pleno",
+    "Descricao": "Automatizar processos de CI/CD, gerenciar infraestrutura como código (Terraform) e monitorar ambientes em produção."
+  },
+  {
+    "Id": 13,
+    "Titulo": "Product Owner (PO)",
+    "Descricao": "Definir e priorizar o backlog do produto, escrever estórias de usuário e ser a ponte entre o negócio e a equipe de TI."
+  },
+  {
+    "Id": 14,
+    "Titulo": "Desenvolvedor Mobile Júnior (Flutter)",
+    "Descricao": "Oportunidade para iniciar na carreira mobile, desenvolvendo aplicativos multiplataforma com Flutter e Dart."
+  },
+  {
+    "Id": 15,
+    "Titulo": "Analista de Sistemas Júnior",
+    "Descricao": "Realizar o levantamento de requisitos, documentação de sistemas e dar suporte às equipes de desenvolvimento."
+  }
+]

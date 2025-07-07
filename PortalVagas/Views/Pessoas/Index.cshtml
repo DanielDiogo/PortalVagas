@@ -1,0 +1,62 @@
+﻿@model PortalVagas.ViewModels.PessoasPaginadasViewModel
+
+@{
+    ViewData["Title"] = "Pessoas e suas Candidaturas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Criar" class="btn btn-primary">Cadastrar Nova Pessoa</a>
+</p>
+
+<div class="accordion" id="accordionPessoas">
+    @foreach (var item in Model.Pessoas)
+    {
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading-@item.Pessoa.Id">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@item.Pessoa.Id" aria-expanded="false" aria-controls="collapse-@item.Pessoa.Id">
+                    @item.Pessoa.Nome
+                </button>
+            </h2>
+            <div id="collapse-@item.Pessoa.Id" class="accordion-collapse collapse" aria-labelledby="heading-@item.Pessoa.Id" data-bs-parent="#accordionPessoas">
+                <div class="accordion-body">
+                    @if (item.Candidaturas.Any())
+                    {
+                        <h5>Candidaturas:</h5>
+                        <ul class="list-group">
+                            @foreach (var candidatura in item.Candidaturas)
+                            {
+                                <li class="list-group-item">
+                                    @candidatura.TituloVaga - <span class="badge bg-secondary">@candidatura.Status</span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>Esta pessoa ainda não se candidatou a nenhuma vaga.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@{
+    var paginaAnteriorDesabilitada = Model.PaginaAtual <= 1 ? "disabled" : "";
+    var proximaPaginaDesabilitada = Model.PaginaAtual >= Model.TotalPaginas ? "disabled" : "";
+    var paginaAnterior = Model.PaginaAtual - 1;
+    var proximaPagina = Model.PaginaAtual + 1;
+}
+
+<nav class="mt-3">
+    <ul class="pagination">
+        <li class="page-item @paginaAnteriorDesabilitada">
+            <a class="page-link" asp-action="Index" asp-route-pagina="@paginaAnterior">Anterior</a>
+        </li>
+        <li class="page-item @proximaPaginaDesabilitada">
+            <a class="page-link" asp-action="Index" asp-route-pagina="@proximaPagina">Próxima</a>
+        </li>
+    </ul>
+</nav>

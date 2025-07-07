@@ -1,0 +1,82 @@
+[
+  {
+    "IdVaga": 1,
+    "IdPessoa": 15,
+    "Status": 1
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 1,
+    "Status": 2
+  },
+  {
+    "IdVaga": 2,
+    "IdPessoa": 1,
+    "Status": 0
+  },
+  {
+    "IdVaga": 2,
+    "IdPessoa": 16,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 6,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 9,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 12,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 26,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 25,
+    "Status": 1
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 16,
+    "Status": 1
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 2,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 4,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 14,
+    "Status": 1
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 22,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 27,
+    "Status": 0
+  },
+  {
+    "IdVaga": 1,
+    "IdPessoa": 30,
+    "Status": 0
+  }
+]

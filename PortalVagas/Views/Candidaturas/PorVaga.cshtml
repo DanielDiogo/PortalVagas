@@ -1,0 +1,39 @@
+﻿@model PortalVagas.ViewModels.CandidatosPorVagaViewModel
+
+@{
+    ViewData["Title"] = "Candidatos para a Vaga";
+}
+
+<h1>@ViewData["Title"]: @Model.Vaga.Titulo</h1>
+<hr/>
+
+@if (Model.Candidatos.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nome do Candidato</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var candidato in Model.Candidatos)
+        {
+            <tr>
+                <td>@candidato.NomePessoa</td>
+                <td>
+                    <span class="badge bg-primary">@candidato.Status</span>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Ainda não há candidatos para esta vaga.</p>
+}
+
+<div class="mt-4">
+    <a asp-controller="Vagas" asp-action="Detalhes" asp-route-id="@Model.Vaga.Id">Voltar para Detalhes da Vaga</a>
+</div>

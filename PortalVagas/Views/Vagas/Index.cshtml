@@ -1,0 +1,43 @@
+﻿@model List<PortalVagas.ViewModels.VagaListaViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Vagas";
+    var filtroAtual = ViewData["FiltroAtual"] as string;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form asp-action="Index" method="get" class="d-flex">
+            <input type="text" name="termoBusca" class="form-control me-2" placeholder="Digite para buscar..."
+                   value="@filtroAtual"/>
+            <button type="submit" class="btn btn-info">Buscar</button>
+        </form>
+    </div>
+    <div class="col-md-6 text-end">
+        <a asp-action="Criar" class="btn btn-primary">Criar Nova Vaga</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Título da Vaga</th>
+        <th>Nº de Candidatos</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var vaga in Model)
+    {
+        <tr>
+            <td>@vaga.Titulo</td>
+            <td>@vaga.NumeroDeCandidatos</td>
+            <td>
+                <a asp-action="Detalhes" asp-route-id="@vaga.Id" class="btn btn-secondary btn-sm">Gerenciar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

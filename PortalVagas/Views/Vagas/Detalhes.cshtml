@@ -1,0 +1,69 @@
+﻿@model PortalVagas.ViewModels.VagaDetalhadaViewModel
+
+@{ ViewData["Title"] = "Detalhes da Vaga"; }
+
+<div>
+    <h1>@Model.Vaga.Titulo</h1>
+    <p>@Model.Vaga.Descricao</p>
+</div>
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">Candidatar-se a esta vaga</div>
+            <div class="card-body">
+                <form asp-action="Candidatar" method="post">
+                    <input type="hidden" name="vagaId" value="@Model.Vaga.Id"/>
+                    <div class="form-group">
+                        <label>Selecione a Pessoa</label>
+                        <select name="pessoaSelecionadaId" asp-items="Model.PessoasDisponiveis" class="form-control">
+                            <option value="">-- Selecione --</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Candidatar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h3>Candidatos Inscritos</h3>
+            <div>
+                <a asp-controller="Candidaturas" asp-action="PorVaga" asp-route-id="@Model.Vaga.Id" class="btn btn-outline-primary btn-sm">Ver lista completa</a>
+                <a asp-controller="Candidaturas" asp-action="Aprovados" asp-route-id="@Model.Vaga.Id" class="btn btn-outline-success btn-sm">Ver Aprovados</a>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            @foreach (var candidato in Model.Candidatos)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        @candidato.NomePessoa - <span class="badge bg-info">@candidato.Status</span>
+                    </div>
+                    @if (candidato.Status == StatusCandidatura.EmAnalise)
+                    {
+                        <div>
+                            <form asp-action="Aprovar" method="post" class="d-inline">
+                                <input type="hidden" name="vagaId" value="@Model.Vaga.Id"/>
+                                <input type="hidden" name="pessoaId" value="@candidato.PessoaId"/>
+                                <button type="submit" class="btn btn-sm btn-success">Aprovar</button>
+                            </form>
+                            <form asp-action="Reprovar" method="post" class="d-inline">
+                                <input type="hidden" name="vagaId" value="@Model.Vaga.Id"/>
+                                <input type="hidden" name="pessoaId" value="@candidato.PessoaId"/>
+                                <button type="submit" class="btn btn-sm btn-danger">Reprovar</button>
+                            </form>
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index">Voltar para a Lista de Vagas</a>
+</div>

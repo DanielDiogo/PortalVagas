@@ -1,0 +1,36 @@
+﻿@model PortalVagas.ViewModels.CandidatosPorVagaViewModel
+
+@{
+    ViewData["Title"] = "Candidatos Aprovados";
+}
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1>@ViewData["Title"] para a Vaga: @Model.Vaga.Titulo</h1>
+    @if (Model.Candidatos.Any())
+    {
+        <a asp-action="ExportarAprovadosCsv" asp-route-id="@Model.Vaga.Id" class="btn btn-success">
+            Exportar para CSV
+        </a>
+    }
+</div>
+<hr />
+
+@if (Model.Candidatos.Any())
+{
+    <ul class="list-group">
+        @foreach (var candidato in Model.Candidatos)
+        {
+            <li class="list-group-item">
+                @candidato.NomePessoa
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Ainda não há candidatos aprovados para esta vaga.</p>
+}
+
+<div class="mt-4">
+    <a asp-controller="Vagas" asp-action="Detalhes" asp-route-id="@Model.Vaga.Id">Voltar para Detalhes da Vaga</a>
+</div>
